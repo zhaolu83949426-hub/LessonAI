@@ -4,7 +4,7 @@
     <div class="content">
       <div class="header">
         <div class="title-wrap">
-          <van-icon name="arrow-left" size="24" @click="$router.push('/')" />
+          <van-icon class="back-icon" name="arrow-left" size="24" @click="$router.push('/')" />
           <h1 class="page-title">{{ session?.title || '会话详情' }}</h1>
         </div>
       </div>
@@ -26,8 +26,11 @@
           :key="msg.id" 
           :class="['chat-bubble-wrap', normalizeRole(msg.role)]"
         >
-          <div class="chat-bubble">
-            {{ msg.content }}
+          <div class="chat-message">
+            <div class="chat-bubble">
+              {{ msg.content }}
+            </div>
+            <div class="message-time">{{ formatMessageTime(msg.createdAt || msg.updatedAt) }}</div>
           </div>
         </div>
       </div>
@@ -97,7 +100,8 @@ const handleSend = async () => {
   messages.value.push({
     id: Date.now(),
     role: 'user',
-    content: msgContent
+    content: msgContent,
+    createdAt: new Date().toISOString()
   })
   inputMsg.value = ''
   scrollToBottom()
@@ -130,6 +134,24 @@ const goToResult = () => {
   }
 }
 
+const formatMessageTime = (dateStr?: string) => {
+  if (!dateStr) return ''
+
+  const date = new Date(dateStr)
+  if (Number.isNaN(date.getTime())) return ''
+
+  const now = new Date()
+  const isToday =
+    date.getFullYear() === now.getFullYear() &&
+    date.getMonth() === now.getMonth() &&
+    date.getDate() === now.getDate()
+
+  const time = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`
+  if (isToday) return time
+
+  return `${date.getMonth() + 1}-${date.getDate()} ${time}`
+}
+
 const normalizeRole = (role: string) => role?.toLowerCase() || ''
 </script>
 
@@ -153,22 +175,36 @@ const normalizeRole = (role: string) => role?.toLowerCase() || ''
 .content {
   position: relative;
   z-index: 1;
-  padding: 62px 16px 120px;
+  padding: 94px 16px 120px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  padding: 18px 16px 14px;
+  background: rgba(247, 244, 238, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(230, 223, 212, 0.9);
   margin-bottom: 24px;
+  z-index: 20;
 }
 .title-wrap {
   display: flex;
   align-items: center;
   gap: 12px;
   color: #2F2A24;
+  width: 100%;
+  min-width: 0;
+}
+.back-icon {
+  flex-shrink: 0;
 }
 .page-title {
   font-size: 20px;
@@ -177,7 +213,7 @@ const normalizeRole = (role: string) => role?.toLowerCase() || ''
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 260px;
+  flex: 1;
 }
 .meta-card {
   background: #FFFDF8;
@@ -220,18 +256,31 @@ const normalizeRole = (role: string) => role?.toLowerCase() || ''
 .chat-bubble-wrap.assistant {
   justify-content: flex-start;
 }
-.chat-bubble {
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   max-width: 80%;
+}
+.chat-bubble {
   padding: 12px 16px;
   border-radius: 16px;
   font-size: 14px;
   line-height: 1.5;
   white-space: pre-wrap;
 }
+.message-time {
+  font-size: 12px;
+  color: #9E968B;
+  line-height: 1;
+}
 .chat-bubble-wrap.user .chat-bubble {
   background: #2F7D4A;
   color: #FFFFFF;
   border-bottom-right-radius: 4px;
+}
+.chat-bubble-wrap.user .message-time {
+  text-align: right;
 }
 .chat-bubble-wrap.assistant .chat-bubble {
   background: #FFFFFF;

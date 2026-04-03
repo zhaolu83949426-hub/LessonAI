@@ -15,7 +15,11 @@ public class ChatSessionRespVO {
 
     private Long templateId;
 
+    private String templateName;
+
     private Long llmConfigId;
+
+    private String llmConfigName;
 
     private Long currentResultId;
 

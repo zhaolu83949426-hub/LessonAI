@@ -112,6 +112,9 @@ public class ChatSessionServiceImpl implements ChatSessionService {
     }
 
     private ChatSessionRespVO toResp(ChatSessionDO session) {
+        PromptTemplateDO template = promptTemplateService.getByIdAndUserId(session.getTemplateId(), session.getUserId());
+        String templateName = template == null ? null : template.getName();
+        String llmConfigName = llmConfigService.getEnabledById(session.getLlmConfigId()).getName();
         SessionMessageDO latestQuestion = sessionMessageMapper.selectOne(new LambdaQueryWrapper<SessionMessageDO>()
                 .eq(SessionMessageDO::getSessionId, session.getId())
                 .eq(SessionMessageDO::getRole, "USER")
@@ -121,7 +124,9 @@ public class ChatSessionServiceImpl implements ChatSessionService {
                 .id(session.getId())
                 .title(session.getTitle())
                 .templateId(session.getTemplateId())
+                .templateName(templateName)
                 .llmConfigId(session.getLlmConfigId())
+                .llmConfigName(llmConfigName)
                 .currentResultId(session.getCurrentResultId())
                 .latestQuestion(latestQuestion == null ? null : latestQuestion.getContent())
                 .resultStatus(session.getCurrentResultId() == null ? "DRAFT" : "GENERATED")
