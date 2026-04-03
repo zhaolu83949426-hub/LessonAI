@@ -1,0 +1,3669 @@
+{
+  "version": "2.10",
+  "children": [
+    {
+      "type": "frame",
+      "id": "vx44g",
+      "x": -977,
+      "y": -59,
+      "name": "LessonAI UI System",
+      "width": 1440,
+      "height": 1180,
+      "fill": "#F7F4EE",
+      "layout": "vertical",
+      "gap": 28,
+      "padding": 40,
+      "children": [
+        {
+          "type": "frame",
+          "id": "FJg6i",
+          "name": "Hero",
+          "width": "fill_container",
+          "height": 180,
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "jmOiw",
+              "name": "Hero Left",
+              "width": 820,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Lgpfa",
+                  "name": "Tag",
+                  "width": 172,
+                  "height": 34,
+                  "fill": "#E8F4EC",
+                  "cornerRadius": 17,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pb2EL",
+                      "name": "heroTagText",
+                      "fill": "#245F38",
+                      "content": "LessonAI / 移动端优先",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "tVv1r",
+                  "name": "heroTitle",
+                  "fill": "#2F2A24",
+                  "content": "幼儿园教案生成 H5 UI 设计",
+                  "fontFamily": "Inter",
+                  "fontSize": 34,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "l5kiT",
+                  "name": "heroBody",
+                  "fill": "#6F675D",
+                  "content": "围绕高频录入、快速生成、低学习成本设计。整体采用暖米色底、白色内容卡、绿色主操作与橙色提示信息，保证老师在手机上能稳定完成模板选择、模型选择、教案生成与会话管理。",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "91bC2",
+              "name": "Hero Right",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IJCjJ",
+                  "name": "heroRightTitle",
+                  "fill": "#2F2A24",
+                  "content": "视觉原则",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "7Pruj",
+                  "name": "heroRightBody",
+                  "fill": "#6F675D",
+                  "content": "1. 不做学生社区感界面\n2. 以单列内容和大触控区为主\n3. 强调模板、模型、会话三类关键路径\n4. 结果阅读区比表单更稳定、更易扫读",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "AY695",
+          "name": "Palette",
+          "width": "fill_container",
+          "height": 160,
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "nmgqY",
+              "name": "Primary",
+              "width": 240,
+              "height": "fill_container",
+              "fill": "#2F7D4A",
+              "cornerRadius": 22,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 18,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nDLB9",
+                  "name": "sw1Text",
+                  "fill": "#FFFFFF",
+                  "content": "Primary\n#2F7D4A",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dCz21",
+              "name": "Accent",
+              "width": 240,
+              "height": "fill_container",
+              "fill": "#F29B38",
+              "cornerRadius": 22,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 18,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Zx2mw",
+                  "name": "sw2Text",
+                  "fill": "#FFFFFF",
+                  "content": "Accent\n#F29B38",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JAbAX",
+              "name": "Bg",
+              "width": 240,
+              "height": "fill_container",
+              "fill": "#FDFBF7",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 18,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fOnbx",
+                  "name": "sw3Text",
+                  "fill": "#2F2A24",
+                  "content": "Warm Linen\n#FDFBF7",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "0Lf4r",
+              "name": "Info",
+              "width": 240,
+              "height": "fill_container",
+              "fill": "#4F8FA8",
+              "cornerRadius": 22,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 18,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9huTN",
+                  "name": "sw4Text",
+                  "fill": "#FFFFFF",
+                  "content": "Info\n#4F8FA8",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZDpEA",
+              "name": "Surface Alt",
+              "width": 240,
+              "height": "fill_container",
+              "fill": "#F3EFE7",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 18,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DXwQs",
+                  "name": "sw5Text",
+                  "fill": "#2F2A24",
+                  "content": "Surface Alt\n#F3EFE7",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gn9Z2",
+          "name": "Core Components",
+          "width": "fill_container",
+          "height": 280,
+          "gap": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Q2bG0",
+              "name": "Buttons & Inputs",
+              "width": 680,
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "OsCKY",
+                  "name": "compTitle",
+                  "fill": "#2F2A24",
+                  "content": "核心组件节奏",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "h0CIl",
+                  "name": "compBody",
+                  "fill": "#6F675D",
+                  "content": "按钮圆角 14px，输入区圆角 14px，内容卡圆角 18px。按钮采用明确的主次层级，不依赖夸张阴影。",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "tPYTE",
+                  "name": "Primary Button",
+                  "width": 240,
+                  "height": 52,
+                  "fill": "#2F7D4A",
+                  "cornerRadius": 14,
+                  "padding": [
+                    16,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lsBwt",
+                      "name": "primaryBtnText",
+                      "fill": "#FFFFFF",
+                      "content": "生成教案",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aQDjL",
+                  "name": "Secondary Button",
+                  "width": 240,
+                  "height": 52,
+                  "fill": "#FFFDF8",
+                  "cornerRadius": 14,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E6DFD4"
+                  },
+                  "padding": [
+                    16,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "L1KgC",
+                      "name": "secondaryBtnText",
+                      "fill": "#2F2A24",
+                      "content": "保存模板",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gec2l",
+                  "name": "Input Field",
+                  "width": 420,
+                  "height": 108,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 18,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E6DFD4"
+                  },
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EvZ3x",
+                      "name": "fieldLabel",
+                      "fill": "#2F2A24",
+                      "content": "主题",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZqOLC",
+                      "name": "fieldValue",
+                      "fill": "#9A9186",
+                      "content": "请填写本次活动主题，例如《春天的颜色》",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kEu6H",
+              "name": "Typography",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "hxAt2",
+                  "name": "typographyTitle",
+                  "fill": "#2F2A24",
+                  "content": "文字层级",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "Wh7Cc",
+                  "name": "typeH1",
+                  "fill": "#2F2A24",
+                  "content": "页面标题 / 24-34px / 700",
+                  "fontFamily": "Inter",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "qX7qE",
+                  "name": "typeH2",
+                  "fill": "#2F2A24",
+                  "content": "区块标题 / 18-20px / 600",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "PWdkq",
+                  "name": "typeBody",
+                  "fill": "#6F675D",
+                  "content": "正文说明 / 14-16px / 400，适合长段落阅读与表单提示。",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "U1HlF",
+                  "name": "States",
+                  "width": "fill_container",
+                  "height": 118,
+                  "fill": "#F3EFE7",
+                  "cornerRadius": 18,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Er4RN",
+                      "name": "stateTitle",
+                      "fill": "#2F2A24",
+                      "content": "状态策略",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ou7om",
+                      "name": "stateBody",
+                      "fill": "#6F675D",
+                      "content": "空状态给出操作入口；加载时使用骨架和按钮 loading；错误提示说人话，不暴露技术细节。",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EDDav",
+      "x": 480,
+      "y": 1280,
+      "name": "02 注册页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "LGK1g",
+          "x": 0,
+          "y": 0,
+          "name": "Accent Top",
+          "width": 390,
+          "height": 220,
+          "fill": "#FFF1DF"
+        },
+        {
+          "type": "frame",
+          "id": "NlZTl",
+          "x": 248,
+          "y": 54,
+          "name": "Accent Shape",
+          "width": 150,
+          "height": 110,
+          "fill": "#E8F4EC",
+          "cornerRadius": 32
+        },
+        {
+          "type": "frame",
+          "id": "jn2xB",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "s83dm",
+              "name": "registerTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "wSlTr",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "CxEVx",
+              "name": "registerBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "0q2An",
+          "x": 16,
+          "y": 88,
+          "name": "Brand",
+          "width": 358,
+          "height": 118,
+          "fill": "#FFFDF8",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "sG5tg",
+              "name": "registerBrandTitle",
+              "fill": "#2F2A24",
+              "content": "创建账号",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "3v4O1",
+              "name": "registerBrandBody",
+              "fill": "#6F675D",
+              "content": "注册后即可管理自己的模板、会话和教案记录",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "2x2MZ",
+          "x": 16,
+          "y": 236,
+          "name": "Register Card",
+          "width": 358,
+          "height": 426,
+          "fill": "#FFFFFF",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "kJiT4",
+              "name": "Field Nickname",
+              "width": "fill_container",
+              "height": 76,
+              "fill": "#FDFBF7",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MPHSK",
+                  "name": "registerField1Text",
+                  "fill": "#6F675D",
+                  "content": "用户名\n用于登录的账号名称",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Yorrn",
+              "name": "Field Password",
+              "width": "fill_container",
+              "height": 76,
+              "fill": "#FDFBF7",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "d6txF",
+                  "name": "registerField2Text",
+                  "fill": "#6F675D",
+                  "content": "密码\n至少包含 8 位字符",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LUfua",
+              "name": "Field Confirm",
+              "width": "fill_container",
+              "height": 76,
+              "fill": "#FDFBF7",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Xs7cq",
+                  "name": "registerField3Text",
+                  "fill": "#6F675D",
+                  "content": "确认密码\n再次输入密码",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zc3Fs",
+              "name": "Hint",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "#E8F4EC",
+              "cornerRadius": 14,
+              "padding": [
+                10,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JJcEA",
+                  "name": "registerHintText",
+                  "fill": "#245F38",
+                  "content": "账号仅用于老师本人管理模板和会话",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SjQvo",
+              "name": "Button",
+              "width": "fill_container",
+              "height": 54,
+              "fill": "#2F7D4A",
+              "cornerRadius": 14,
+              "padding": [
+                16,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fx439",
+                  "name": "registerButtonText",
+                  "fill": "#FFFFFF",
+                  "content": "注册并开始使用",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "woO0I",
+          "x": 130,
+          "y": 690,
+          "name": "registerLogin",
+          "fill": "#2F7D4A",
+          "content": "已有账号？返回登录",
+          "fontFamily": "Inter",
+          "fontSize": 14,
+          "fontWeight": "500"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "qo6eC",
+      "x": 920,
+      "y": 1280,
+      "name": "03 新建会话页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "wtUqm",
+          "x": 0,
+          "y": 0,
+          "name": "Top Wash",
+          "width": 390,
+          "height": 160,
+          "fill": "#E8F4EC"
+        },
+        {
+          "type": "frame",
+          "id": "OOUFx",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "qtigi",
+              "name": "genTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "XxWFn",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "0O6D8",
+              "name": "genBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hS13D",
+          "x": 16,
+          "y": 62,
+          "name": "Header",
+          "width": 358,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "kgqKd",
+              "name": "genHeaderTitle",
+              "fill": "#2F2A24",
+              "content": "新建会话",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "Ps7ev",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "22iT9",
+              "name": "User",
+              "width": 72,
+              "height": 32,
+              "fill": "#FFFDF8",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#DCEADB"
+              },
+              "padding": [
+                6,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YOGVD",
+                  "name": "genHeaderUserText",
+                  "fill": "#245F38",
+                  "content": "草稿",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dcRFL",
+          "x": 0,
+          "y": 0,
+          "name": "Content",
+          "width": 358,
+          "height": 622,
+          "layout": "vertical",
+          "gap": 14,
+          "children": [
+            {
+              "type": "frame",
+              "id": "O5nwb",
+              "name": "Template Card",
+              "width": "fill_container",
+              "height": 64,
+              "fill": "#FFFDF8",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "33R3X",
+                  "fill": "#2F2A24",
+                  "content": "选择模板\n科学探索活动 · 可随时切换",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "imCzg",
+              "name": "Model Card",
+              "width": "fill_container",
+              "height": 64,
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BF7wo",
+                  "fill": "#2F2A24",
+                  "content": "选择模型\nGPT-4.1 教学版 · 可随时切换",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WE52D",
+              "name": "Guide Card",
+              "width": "fill_container",
+              "height": 58,
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "j0LCO",
+                  "fill": "#2F2A24",
+                  "content": "发送后开始对话，生成完成后可查看教案",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HMfya",
+              "name": "Chat Empty",
+              "width": "fill_container",
+              "height": 250,
+              "fill": "#F6FBF7",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#DCEADB"
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bAZAu",
+                  "x": 16,
+                  "y": 18,
+                  "width": 254,
+                  "height": 84,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 18,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E6DFD4"
+                  },
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dRE81",
+                      "fill": "#2F7D4A",
+                      "content": "系统",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "GYV7f",
+                      "fill": "#2F2A24",
+                      "content": "已选择模板和模型，\n发送第一条消息即可开始生成。",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vR1TP",
+                  "x": 55,
+                  "y": 118,
+                  "width": 248,
+                  "height": 84,
+                  "fill": "#EAF5EE",
+                  "cornerRadius": 18,
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jlmU1",
+                      "fill": "#245F38",
+                      "content": "先写主题、班级、\n教具和目标。",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "2hfjR",
+                      "fill": "#4D7A5D",
+                      "content": "例如：生成中班春天观察活动教案。",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "FdQAm",
+                  "x": 64,
+                  "y": 218,
+                  "fill": "#6F675D",
+                  "content": "发送后，这里会像微信一样显示聊天记录。",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Trzt7",
+              "name": "Result Note",
+              "width": "fill_container",
+              "height": 72,
+              "fill": "#FFFDF8",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YgNXB",
+                  "fill": "#2F2A24",
+                  "content": "发送后即可开始对话",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "fqxLh",
+                  "fill": "#6F675D",
+                  "content": "AI 回复完成后，会自动生成教案结果。",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nzTLq",
+          "x": 16,
+          "y": 762,
+          "name": "Composer",
+          "width": 358,
+          "height": 58,
+          "fill": "#FFFDF8",
+          "cornerRadius": 20,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "gap": 10,
+          "padding": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "gjRzI",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#F6F8F7",
+              "cornerRadius": 16,
+              "padding": [
+                10,
+                14
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RZqKk",
+                  "fill": "#8B948C",
+                  "content": "输入消息，点击发送开始对话…",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "9hQc5",
+              "width": 74,
+              "height": "fill_container",
+              "fill": "#2F7D4A",
+              "cornerRadius": 16,
+              "padding": [
+                14,
+                16
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kVCAY",
+                  "fill": "#FFFFFF",
+                  "content": "发送",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "GmbiI",
+      "x": 1360,
+      "y": 1280,
+      "name": "04 模板列表页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "WWptx",
+          "x": 0,
+          "y": 0,
+          "name": "Top Wash",
+          "width": 390,
+          "height": 144,
+          "fill": "#FFF1DF"
+        },
+        {
+          "type": "frame",
+          "id": "cNM4n",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "yp5a9",
+              "name": "tplTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "hn3V4",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "JfdkA",
+              "name": "tplBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "R0DMX",
+          "x": 16,
+          "y": 62,
+          "name": "Header",
+          "width": 358,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "bkUw5",
+              "name": "tplHeaderTitle",
+              "fill": "#2F2A24",
+              "content": "模板管理",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "fPcgZ",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "EBwdg",
+              "name": "New Btn",
+              "width": 84,
+              "height": 34,
+              "fill": "#2F7D4A",
+              "cornerRadius": 17,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cw3RL",
+                  "name": "tplHeaderBtnText",
+                  "fill": "#FFFFFF",
+                  "content": "新建模板",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1m18f",
+          "x": 16,
+          "y": 118,
+          "name": "Summary",
+          "width": 358,
+          "height": 42,
+          "fill": "#FFFDF8",
+          "cornerRadius": 18,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "padding": [
+            10,
+            14
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "J2wwG",
+              "name": "tplSummaryText",
+              "fill": "#6F675D",
+              "content": "共 8 个模板 · 最近更新 2 个",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3MLt5",
+          "x": 16,
+          "y": 180,
+          "name": "List",
+          "width": 358,
+          "height": 500,
+          "layout": "vertical",
+          "gap": 14,
+          "children": [
+            {
+              "type": "frame",
+              "id": "MXwUz",
+              "name": "Template 1",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#FFFFFF",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TSdD4",
+                  "name": "tplCard1Text",
+                  "fill": "#2F2A24",
+                  "content": "科学探索活动\n按固定结构输出目标、准备、过程和延伸活动。适合春天、植物、观察类课堂。\n今天 09:20 更新",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tLhMF",
+              "name": "Template 2",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#FFFDF8",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "L8PxW",
+                  "name": "tplCard2Text",
+                  "fill": "#2F2A24",
+                  "content": "语言表达活动\n强化提问方式和分享环节，适合故事复述、表达训练和角色扮演。\n昨天 18:45 更新",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6zQ0H",
+              "name": "Template 3",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#FFFDF8",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "glBBV",
+                  "name": "tplCard3Text",
+                  "fill": "#2F2A24",
+                  "content": "美术创作活动\n突出材料准备、示范步骤和作品展示，适合涂色、拼贴、手工场景。\n周一 14:10 更新",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "OAPzz",
+          "x": 16,
+          "y": 760,
+          "name": "Bottom Nav",
+          "width": 358,
+          "height": 62,
+          "fill": "#FFFDF8",
+          "cornerRadius": 31,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "gap": 8,
+          "padding": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "SJMJG",
+              "name": "Home",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Fitrx",
+                  "name": "homeInactive2Text",
+                  "fill": "#6F675D",
+                  "content": "首页",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qLmqB",
+              "name": "Template",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#2F7D4A",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6kvsa",
+                  "name": "templateActiveText",
+                  "fill": "#FFFFFF",
+                  "content": "模板",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "A2yT2",
+              "name": "Session",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "av5LC",
+                  "name": "sessionInactive2Text",
+                  "fill": "#6F675D",
+                  "content": "会话",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5AIpq",
+              "name": "My",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YUHNs",
+                  "name": "myInactive2Text",
+                  "fill": "#6F675D",
+                  "content": "我的",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "3lx9g",
+      "x": 40,
+      "y": 2180,
+      "name": "05 模板编辑页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "P909i",
+          "x": 0,
+          "y": 0,
+          "name": "Top Wash",
+          "width": 390,
+          "height": 154,
+          "fill": "#E8F4EC"
+        },
+        {
+          "type": "frame",
+          "id": "Lot3g",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "K93LE",
+              "name": "tpeTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "J39d6",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "IbiOn",
+              "name": "tpeBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3d1nU",
+          "x": 16,
+          "y": 62,
+          "name": "Header",
+          "width": 358,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "rTNuf",
+              "name": "Back",
+              "width": 60,
+              "height": 34,
+              "fill": "#FFFDF8",
+              "cornerRadius": 17,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#DCEADB"
+              },
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FMpEn",
+                  "name": "tpeBackText",
+                  "fill": "#2F2A24",
+                  "content": "返回",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xXpGq",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "mYbvE",
+              "name": "Save",
+              "width": 60,
+              "height": 34,
+              "fill": "#2F7D4A",
+              "cornerRadius": 17,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "jFaeh",
+                  "name": "tpeSaveText",
+                  "fill": "#FFFFFF",
+                  "content": "保存",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "EP7lh",
+          "x": 16,
+          "y": 118,
+          "name": "Meta",
+          "width": 358,
+          "height": 78,
+          "fill": "#FFFDF8",
+          "cornerRadius": 20,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "zo2rX",
+              "name": "tpeMetaText",
+              "fill": "#2F2A24",
+              "content": "模板名称：科学探索活动\n适合中班观察类与自然主题活动",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "sVXwf",
+          "x": 16,
+          "y": 216,
+          "name": "Editor",
+          "width": 358,
+          "height": 474,
+          "fill": "#FFFFFF",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 18,
+          "children": [
+            {
+              "type": "text",
+              "id": "giaLv",
+              "name": "tpeEditorTitle",
+              "fill": "#2F2A24",
+              "content": "模板内容",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "cHi9m",
+              "name": "tpeEditorBody",
+              "fill": "#6F675D",
+              "content": "请扮演一位有经验的幼儿园老师，\n根据以下输入生成结构化教案。\n\n输出必须包含：\n活动名称、活动目标、活动准备、\n活动过程、延伸活动、注意事项。\n\n语言应简洁、具体，\n适合老师直接用于课堂准备。\n活动步骤要有清晰顺序，\n便于快速阅读与复用。",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "w8auR",
+          "x": 16,
+          "y": 708,
+          "name": "Hint",
+          "width": 358,
+          "height": 44,
+          "fill": "#FFF1DF",
+          "cornerRadius": 16,
+          "padding": [
+            10,
+            14
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "FGn9D",
+              "name": "tpeHintText",
+              "fill": "#A05E12",
+              "content": "长 Prompt 也保持大输入区，不做复杂富文本。",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rPW83",
+          "x": 16,
+          "y": 768,
+          "name": "Bottom CTA",
+          "width": 358,
+          "height": 54,
+          "fill": "#2F7D4A",
+          "cornerRadius": 16,
+          "padding": [
+            16,
+            18
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "f7s8M",
+              "name": "tpeBottomText",
+              "fill": "#FFFFFF",
+              "content": "保存模板",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "31Kv2",
+      "x": 480,
+      "y": 2180,
+      "name": "06 会话列表页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "zzuuN",
+          "x": 0,
+          "y": 0,
+          "name": "Top Wash",
+          "width": 390,
+          "height": 150,
+          "fill": "#E8F4EC"
+        },
+        {
+          "type": "frame",
+          "id": "jMYUX",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "5N5Ja",
+              "name": "slTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "aKmGb",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "TGwqD",
+              "name": "slBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "m5Skf",
+          "x": 16,
+          "y": 62,
+          "name": "Header",
+          "width": 358,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "03v2T",
+              "name": "slHeaderTitle",
+              "fill": "#2F2A24",
+              "content": "会话记录",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "phzGC",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "3Pett",
+              "name": "New Session",
+              "width": 84,
+              "height": 34,
+              "fill": "#2F7D4A",
+              "cornerRadius": 17,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xzrjz",
+                  "name": "slHeaderBtnText",
+                  "fill": "#FFFFFF",
+                  "content": "新建会话",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "D7NFC",
+          "x": 16,
+          "y": 118,
+          "name": "Hint",
+          "width": 358,
+          "height": 42,
+          "fill": "#FFFDF8",
+          "cornerRadius": 18,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "padding": [
+            10,
+            14
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "vSrCX",
+              "name": "slHintText",
+              "fill": "#6F675D",
+              "content": "按最近更新时间排序，优先显示可继续生成的会话",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rsp0K",
+          "x": 16,
+          "y": 180,
+          "name": "List",
+          "width": 358,
+          "height": 500,
+          "layout": "vertical",
+          "gap": 14,
+          "children": [
+            {
+              "type": "frame",
+              "id": "p83R5",
+              "name": "Session 1",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#FFFFFF",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XAMBD",
+                  "name": "slCard1Text",
+                  "fill": "#2F2A24",
+                  "content": "春天主题活动设计\n最近一次：春天的颜色 · 继续补充延伸活动与家园共育建议\n今天 10:36 更新",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "g2Mvk",
+              "name": "Session 2",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#FFFDF8",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MzA3m",
+                  "name": "slCard2Text",
+                  "fill": "#2F2A24",
+                  "content": "语言表达活动优化\n最近一次：故事复述活动，准备增加提问层次和评价方式\n昨天 18:15 更新",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "coIIq",
+              "name": "Session 3",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#FFFDF8",
+              "cornerRadius": 22,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "usu0M",
+                  "name": "slCard3Text",
+                  "fill": "#2F2A24",
+                  "content": "美术材料探索\n最近一次：棉签画活动，等待补充活动总结与注意事项\n周二 09:48 更新",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "b1DfU",
+          "x": 16,
+          "y": 760,
+          "name": "Bottom Nav",
+          "width": 358,
+          "height": 62,
+          "fill": "#FFFDF8",
+          "cornerRadius": 31,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "gap": 8,
+          "padding": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "dgYSL",
+              "name": "Home",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KmXgP",
+                  "name": "homeInactive3Text",
+                  "fill": "#6F675D",
+                  "content": "首页",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tIVKx",
+              "name": "Template",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gtD5p",
+                  "name": "templateInactive3Text",
+                  "fill": "#6F675D",
+                  "content": "模板",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IpPrU",
+              "name": "Session",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#2F7D4A",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gNDHI",
+                  "name": "sessionActiveText",
+                  "fill": "#FFFFFF",
+                  "content": "会话",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VAxt3",
+              "name": "My",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "padding": [
+                14,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Vla9T",
+                  "name": "myInactive3Text",
+                  "fill": "#6F675D",
+                  "content": "我的",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OACEO",
+      "x": 920,
+      "y": 2180,
+      "name": "07 会话详情页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "lEC1E",
+          "x": 0,
+          "y": 0,
+          "name": "Top Wash",
+          "width": 390,
+          "height": 156,
+          "fill": "#E8F4EC"
+        },
+        {
+          "type": "frame",
+          "id": "EX2YZ",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "dql3h",
+              "name": "sdTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "dhoIE",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "YWm0w",
+              "name": "sdBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZvGkB",
+          "x": 16,
+          "y": 62,
+          "name": "Header",
+          "width": 358,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "OxGiE",
+              "name": "Back",
+              "width": 60,
+              "height": 34,
+              "fill": "#FFFDF8",
+              "cornerRadius": 17,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#DCEADB"
+              },
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "f9PEF",
+                  "name": "sdBackText",
+                  "fill": "#2F2A24",
+                  "content": "返回",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vKYou",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "zUV7t",
+              "name": "More",
+              "width": 60,
+              "height": 34,
+              "fill": "#FFFDF8",
+              "cornerRadius": 17,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#DCEADB"
+              },
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pPTYT",
+                  "name": "sdMoreText",
+                  "fill": "#2F2A24",
+                  "content": "更多",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "oLALr",
+          "x": 16,
+          "y": 118,
+          "name": "Meta",
+          "width": 358,
+          "height": 88,
+          "fill": "#FFFDF8",
+          "cornerRadius": 22,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "iTlIU",
+              "name": "sdMetaText",
+              "fill": "#2F2A24",
+              "content": "春天主题活动设计\n科学探索活动 · GPT-4.1 教学版 · 已保存结果",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "witt2",
+          "x": 16,
+          "y": 224,
+          "name": "Chat Timeline",
+          "width": 358,
+          "height": 416,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZBFad",
+              "x": 88,
+              "y": 0,
+              "width": 270,
+              "height": 98,
+              "fill": "#DFF3E5",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "68pVz",
+                  "fill": "#245F38",
+                  "content": "老师 10:12",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "xumZ3",
+                  "fill": "#2F2A24",
+                  "content": "请生成一份中班《春天的颜色》教案，\n包含观察、合作表达，\n延伸活动，\n和家园建议。",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "9mLDo",
+              "x": 0,
+              "y": 110,
+              "width": 296,
+              "height": 118,
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6nrOn",
+                  "fill": "#2F7D4A",
+                  "content": "AI 10:13",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "QMN5V",
+                  "fill": "#2F2A24",
+                  "content": "已生成教案初稿，包含目标、准备、\n过程和延伸活动建议。\n教案结果已自动保存。",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NMQD7",
+              "x": 118,
+              "y": 242,
+              "width": 240,
+              "height": 84,
+              "fill": "#DFF3E5",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gFNNV",
+                  "fill": "#245F38",
+                  "content": "老师 10:36",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "jDjza",
+                  "fill": "#2F2A24",
+                  "content": "把延伸活动改成更适合\n家园共育的版本。",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gjBlp",
+              "x": 0,
+              "y": 334,
+              "width": 312,
+              "height": 82,
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8T825",
+                  "fill": "#2F7D4A",
+                  "content": "AI 10:37",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "r1JEv",
+                  "fill": "#2F2A24",
+                  "content": "已补充家园共育延伸活动，\n现在可以查看教案。",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9MAMs",
+          "x": 16,
+          "y": 640,
+          "name": "Bottom Panel",
+          "width": 358,
+          "height": 188,
+          "fill": "#FFFDF8",
+          "cornerRadius": 22,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "ARi7p",
+              "width": "fill_container",
+              "height": 52,
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ec6QN",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#F6F8F7",
+                  "cornerRadius": 16,
+                  "padding": [
+                    10,
+                    14
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Jfrk1",
+                      "fill": "#8B948C",
+                      "content": "继续追问或补充要求…",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0gSyj",
+                  "width": 74,
+                  "height": "fill_container",
+                  "fill": "#2F7D4A",
+                  "cornerRadius": 16,
+                  "padding": [
+                    14,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "VlIiI",
+                      "fill": "#FFFFFF",
+                      "content": "发送",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rrkFj",
+              "width": "fill_container",
+              "height": 54,
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "6C1UX",
+                  "width": 110,
+                  "height": "fill_container",
+                  "fill": "#FFFDF8",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E6DFD4"
+                  },
+                  "padding": [
+                    16,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "agceA",
+                      "fill": "#2F2A24",
+                      "content": "查看教案",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QLJb1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#EAF5EE",
+                  "cornerRadius": 16,
+                  "padding": [
+                    16,
+                    18
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "T91ln",
+                      "fill": "#245F38",
+                      "content": "教案已生成，可进入编辑页",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fVJVF",
+      "x": 1360,
+      "y": 2180,
+      "name": "08 教案编辑页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "UEKNu",
+          "x": 0,
+          "y": 0,
+          "name": "Top Wash",
+          "width": 390,
+          "height": 156,
+          "fill": "#FFF1DF"
+        },
+        {
+          "type": "frame",
+          "id": "pjS3h",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "j7eIH",
+              "name": "leTime",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "qIbMn",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "oU7ap",
+              "name": "leBattery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YHVVo",
+          "x": 16,
+          "y": 62,
+          "name": "Header",
+          "width": 358,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "aG8zP",
+              "name": "Back",
+              "width": 60,
+              "height": 34,
+              "fill": "#FFFDF8",
+              "cornerRadius": 17,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#DCEADB"
+              },
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Icd1w",
+                  "name": "leBackText",
+                  "fill": "#2F2A24",
+                  "content": "返回",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yxZEa",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "rvY0D",
+              "name": "Save",
+              "width": 60,
+              "height": 34,
+              "fill": "#2F7D4A",
+              "cornerRadius": 17,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yeQSk",
+                  "name": "leSaveText",
+                  "fill": "#FFFFFF",
+                  "content": "保存",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "neePt",
+          "x": 16,
+          "y": 118,
+          "name": "Meta",
+          "width": 358,
+          "height": 88,
+          "fill": "#FFFDF8",
+          "cornerRadius": 22,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "yCkgw",
+              "name": "leMetaText",
+              "fill": "#2F2A24",
+              "content": "所属会话：春天主题活动设计\n模板：科学探索活动 · 模型：GPT-4.1 教学版",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qwKdR",
+          "x": 16,
+          "y": 224,
+          "name": "Editor",
+          "width": 358,
+          "height": 518,
+          "fill": "#FFFFFF",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 18,
+          "children": [
+            {
+              "type": "text",
+              "id": "TLmg0",
+              "name": "leEditorTitle",
+              "fill": "#2F2A24",
+              "content": "教案正文",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "uc70j",
+              "name": "leEditorBody",
+              "fill": "#6F675D",
+              "content": "活动名称：春天的颜色在哪里\n\n活动目标：\n1. 观察春天常见色彩变化。\n2. 尝试用完整语言描述发现。\n3. 通过合作创作表达感受。\n\n活动准备：\n花瓣卡片、水彩纸、棉签、作品展示板。\n\n活动过程：\n导入观察 → 分组探索 → 集体分享 → 创作展示。",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dXQPh",
+          "x": 16,
+          "y": 760,
+          "name": "Bottom Actions",
+          "width": 358,
+          "height": 62,
+          "gap": 10,
+          "children": [
+            {
+              "type": "frame",
+              "id": "yIE28",
+              "name": "Ghost",
+              "width": 118,
+              "height": 54,
+              "fill": "#FFFDF8",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "padding": [
+                16,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Ujn0j",
+                  "name": "leGhostText",
+                  "fill": "#2F2A24",
+                  "content": "查看原始版",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "drVz3",
+              "name": "Primary",
+              "width": "fill_container",
+              "height": 54,
+              "fill": "#2F7D4A",
+              "cornerRadius": 16,
+              "padding": [
+                16,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "oFjZj",
+                  "name": "lePrimaryText",
+                  "fill": "#FFFFFF",
+                  "content": "保存教案",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EGrud",
+      "x": 1820,
+      "y": 1280,
+      "name": "09 PC 生成页适配",
+      "width": 1320,
+      "height": 900,
+      "fill": "#F7F4EE",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 32,
+      "children": [
+        {
+          "type": "frame",
+          "id": "o3P8n",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#FFFDF8",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "gap": 12,
+          "padding": [
+            18,
+            20
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "Sh97b",
+              "name": "dHeaderTitle",
+              "fill": "#2F2A24",
+              "content": "LessonAI · 智能生成教案",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "AJ30F",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "hKmrJ",
+              "name": "dHeaderInfo",
+              "fill": "#6F675D",
+              "content": "当前会话：春天主题活动设计",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "T0vCj",
+          "name": "Hero",
+          "width": "fill_container",
+          "height": 88,
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Ze14P",
+              "name": "Model",
+              "width": 300,
+              "height": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "U66Jn",
+                  "name": "dModelText",
+                  "fill": "#2F2A24",
+                  "content": "模型\nGPT-4.1 教学版",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cNVlO",
+              "name": "Template",
+              "width": 300,
+              "height": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mx8BP",
+                  "name": "dTemplateText",
+                  "fill": "#2F2A24",
+                  "content": "模板\n科学探索活动",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "3Fm2a",
+              "name": "Session",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#E8F4EC",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9CPDV",
+                  "name": "dSessionText",
+                  "fill": "#245F38",
+                  "content": "继续会话\n保留上下文继续补充教案内容",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "10B1I",
+          "name": "Body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "rWRA1",
+              "name": "Chat Panel",
+              "width": 484,
+              "height": 628,
+              "fill": "#FFFDF8",
+              "cornerRadius": 24,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "4xHzG",
+                  "fill": "#2F2A24",
+                  "content": "对话记录",
+                  "fontFamily": "Inter",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "RLv5q",
+                  "fill": "#6F675D",
+                  "content": "左侧保留聊天上下文，底部输入后继续追问或发起新一轮生成。",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "qBFDh",
+                  "name": "Desktop Chat",
+                  "width": 436,
+                  "height": 406,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TUTr9",
+                      "x": 130,
+                      "y": 0,
+                      "width": 306,
+                      "height": 104,
+                      "fill": "#DFF3E5",
+                      "cornerRadius": 20,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Q5osA",
+                          "fill": "#245F38",
+                          "content": "老师 10:12",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "9CYmb",
+                          "fill": "#2F2A24",
+                          "content": "请生成一份中班《春天的颜色》教案，\n包含观察、合作表达、延伸活动，\n并补充家园建议。",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "niWGv",
+                      "x": 0,
+                      "y": 112,
+                      "width": 336,
+                      "height": 118,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E6DFD4"
+                      },
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ojkt0",
+                          "fill": "#2F7D4A",
+                          "content": "AI 10:13",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "0irPI",
+                          "fill": "#2F2A24",
+                          "content": "已生成教案初稿，包含活动目标、准备、\n过程和延伸活动建议。\n当前结果已自动保存到右侧结果区。",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6egXR",
+                      "x": 156,
+                      "y": 244,
+                      "width": 280,
+                      "height": 84,
+                      "fill": "#DFF3E5",
+                      "cornerRadius": 20,
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "45SUQ",
+                          "fill": "#245F38",
+                          "content": "老师 10:36",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "PAGQ0",
+                          "fill": "#2F2A24",
+                          "content": "把延伸活动改成更适合家园共育的版本。",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "69PVr",
+                      "x": 0,
+                      "y": 342,
+                      "width": 324,
+                      "height": 64,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E6DFD4"
+                      },
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TFFPD",
+                          "fill": "#2F7D4A",
+                          "content": "AI 10:37",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "mXHOJ",
+                          "fill": "#2F2A24",
+                          "content": "已补充家园共育延伸活动，可查看右侧教案。",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JIXgZ",
+                  "name": "Desktop Composer",
+                  "width": 436,
+                  "height": 58,
+                  "fill": "#FFFDF8",
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E6DFD4"
+                  },
+                  "gap": 10,
+                  "padding": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "enLp7",
+                      "width": 344,
+                      "height": 42,
+                      "fill": "#F6F8F7",
+                      "cornerRadius": 16,
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2FGpv",
+                          "fill": "#8B948C",
+                          "content": "继续输入要求，点击发送开始对话…",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "orsEW",
+                      "width": 90,
+                      "height": 42,
+                      "fill": "#2F7D4A",
+                      "cornerRadius": 16,
+                      "padding": [
+                        12,
+                        18
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ngu4d",
+                          "fill": "#FFFFFF",
+                          "content": "发送",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "j5prG",
+              "name": "Result",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 24,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 14,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "5n6si",
+                  "name": "dResultTitle",
+                  "fill": "#2F2A24",
+                  "content": "生成结果",
+                  "fontFamily": "Inter",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "VZ8xX",
+                  "name": "dResultBody",
+                  "fill": "#6F675D",
+                  "content": "活动名称：春天的颜色在哪里\n\n活动目标：帮助幼儿在自然观察中感知色彩变化，并尝试用完整语言表达发现。\n\n活动准备：花瓣卡片、水彩纸、棉签、展示板。\n\n活动过程：导入观察、分组探索、共同创作、集体分享。\n\n延伸活动：回家记录生活中的春天颜色，并与家长一起完成观察卡。",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Fcq9Q",
+      "x": 40,
+      "y": 1280,
+      "name": "01 登录页",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#F7F4EE",
+      "cornerRadius": 30,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#E6DFD4"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "1PBnm",
+          "x": 0,
+          "y": 0,
+          "name": "Accent Top",
+          "width": 390,
+          "height": 212,
+          "fill": "#E8F4EC"
+        },
+        {
+          "type": "frame",
+          "id": "Ck0Wx",
+          "x": 272,
+          "y": 42,
+          "name": "Accent Circle",
+          "width": 140,
+          "height": 140,
+          "fill": "#FFF1DF",
+          "cornerRadius": 70
+        },
+        {
+          "type": "frame",
+          "id": "lT9Kk",
+          "x": 16,
+          "y": 14,
+          "name": "Status",
+          "width": 358,
+          "height": 32,
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "C3jqr",
+              "name": "login2Time",
+              "fill": "#2F2A24",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "eodWF",
+              "name": "Spacer",
+              "opacity": 0,
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "3DS8W",
+              "name": "login2Battery",
+              "fill": "#6F675D",
+              "content": "5G 89%",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "2bidK",
+          "x": 16,
+          "y": 88,
+          "name": "Brand Card",
+          "width": 358,
+          "height": 120,
+          "fill": "#FFFDF8",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#DCEADB"
+          },
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "01u7O",
+              "name": "Chip",
+              "width": 108,
+              "height": 30,
+              "fill": "#FFF1DF",
+              "cornerRadius": 15,
+              "padding": [
+                6,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "G8yux",
+                  "name": "login2BrandChipText",
+                  "fill": "#A05E12",
+                  "content": "老师端 H5",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "WlG9a",
+              "name": "login2BrandTitle",
+              "fill": "#2F2A24",
+              "content": "LessonAI",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "nIE08",
+              "name": "login2BrandBody",
+              "fill": "#6F675D",
+              "content": "快速生成、编辑并保存幼儿园教案",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "B7Z30",
+          "x": 16,
+          "y": 240,
+          "name": "Login Card",
+          "width": 358,
+          "height": 346,
+          "fill": "#FFFFFF",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#E6DFD4"
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "cEaRM",
+              "name": "login2CardTitle",
+              "fill": "#2F2A24",
+              "content": "登录系统",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "3DFdY",
+              "name": "Field Account",
+              "width": "fill_container",
+              "height": 82,
+              "fill": "#FDFBF7",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Ot8yH",
+                  "name": "login2Field1Text",
+                  "fill": "#6F675D",
+                  "content": "用户名\n请输入账号",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Zlmhm",
+              "name": "Field Password",
+              "width": "fill_container",
+              "height": 82,
+              "fill": "#FDFBF7",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#E6DFD4"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YfI2y",
+                  "name": "login2Field2Text",
+                  "fill": "#6F675D",
+                  "content": "密码\n请输入密码",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mHqLA",
+              "name": "Button",
+              "width": "fill_container",
+              "height": 54,
+              "fill": "#2F7D4A",
+              "cornerRadius": 14,
+              "padding": [
+                16,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CoZxl",
+                  "name": "login2ButtonText",
+                  "fill": "#FFFFFF",
+                  "content": "登录并进入教案工作台",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "h9i8l",
+          "x": 128,
+          "y": 620,
+          "name": "login2Register",
+          "fill": "#2F7D4A",
+          "content": "还没有账号？去注册",
+          "fontFamily": "Inter",
+          "fontSize": 14,
+          "fontWeight": "500"
+        }
+      ]
+    }
+  ]
+}

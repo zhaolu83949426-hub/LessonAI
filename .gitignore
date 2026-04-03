@@ -1,0 +1,9 @@
+target/
+
+*.log
+*.pid
+
+.vscode/
+
+frontend/node_modules/
+frontend/dist/
