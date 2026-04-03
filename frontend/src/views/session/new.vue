@@ -166,15 +166,17 @@ const handleSend = async () => {
         templateId: currentTemplate.value.id,
         llmConfigId: currentModel.value.id
       })
-      sId = sessionRet.id
+      sId = Number(sessionRet)
       sessionId.value = sId
     }
 
     // 2. 发送生成请求
-    await generateLesson({
+    const generateRet: any = await generateLesson({
       sessionId: sId,
-      message: inputMsg.value
+      topic: inputMsg.value.substring(0, 100),
+      userMessage: inputMsg.value
     })
+    currentResultId.value = generateRet?.id ?? null
     
     // 生成成功，跳转会话详情页
     closeToast()
@@ -190,8 +192,8 @@ const handleSend = async () => {
 }
 
 const goToResult = () => {
-  if (currentResultId.value) {
-    router.push(`/record/${currentResultId.value}/edit`)
+  if (sessionId.value) {
+    router.push(`/session/${sessionId.value}/record`)
   }
 }
 </script>

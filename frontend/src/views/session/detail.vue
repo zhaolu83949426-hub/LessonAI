@@ -24,7 +24,7 @@
         <div 
           v-for="msg in messages" 
           :key="msg.id" 
-          :class="['chat-bubble-wrap', msg.role]"
+          :class="['chat-bubble-wrap', normalizeRole(msg.role)]"
         >
           <div class="chat-bubble">
             {{ msg.content }}
@@ -108,7 +108,8 @@ const handleSend = async () => {
   try {
     await generateLesson({
       sessionId: sessionId,
-      message: msgContent
+      topic: session.value?.title || msgContent.substring(0, 100),
+      userMessage: msgContent
     })
     
     // 生成成功，重新拉取拉取会话和消息（主要是更新了 currentResultId）
@@ -125,9 +126,11 @@ const handleSend = async () => {
 
 const goToResult = () => {
   if (session.value?.currentResultId) {
-    router.push(`/record/${session.value.currentResultId}/edit`)
+    router.push(`/session/${sessionId}/record`)
   }
 }
+
+const normalizeRole = (role: string) => role?.toLowerCase() || ''
 </script>
 
 <style scoped>

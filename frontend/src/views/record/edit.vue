@@ -61,22 +61,6 @@ import { getLessonRecordsBySession, updateLessonRecord } from '@/api'
 import { showToast, showSuccessToast } from 'vant'
 
 const route = useRoute()
-// Note: route.params.id is the Result ID! 
-// Wait! The user clicks "查看结果" which goes to `/record/:id/edit`.
-// But first we need the specific record details. 
-// However, the API provides: getLessonRecordsBySession, updateLessonRecord.
-// We don't have getLessonRecordById? Let's assume we can fetch by session and find it, or we just pass sessionId?
-// Wait, in `session/new` and `session/detail`, we route to `/record/${currentResultId}/edit`.
-// The backend might not have `getLessonRecordById` in Requirements (8.5), it just has `GET /api/lesson-records/session/{sessionId}`.
-// Let's change the router logic to pass `sessionId` to this page.
-// Ah, the route is `/record/:id/edit`, but if `id` is result ID, how do we query it?
-// Let me update the route to `/session/:id/record` instead to query by sessionId. But actually it's fine, I can just use an inner fetch. I'll modify router manually in a bit if needed.
-// Wait! In requirements 8.5: `GET /api/lesson-records/session/{sessionId}`.
-// Let's assume `route.params.id` is the `sessionId` here? No, in my prior code: `router.push("/record/${session.currentResultId}/edit")`.
-// Let's modify `session/detail.vue` and `session/new.vue` to push `/session/${sId}/record` instead? Yes, that's better!
-
-// Let me assume the route parameter here is session ID and change later.
-// For now, let's just make it sessionId.
 const sessionId = Number(route.params.id) 
 const record = ref<any>(null)
 const editedContent = ref('')
@@ -86,8 +70,7 @@ onMounted(async () => {
   try {
     const list: any = await getLessonRecordsBySession(sessionId)
     if (list && list.length > 0) {
-      // get latest record
-      record.value = list[0]
+      record.value = list[list.length - 1]
       editedContent.value = record.value.editedContent || record.value.resultContent
     }
   } catch (e) {

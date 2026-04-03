@@ -7,6 +7,25 @@ const request = axios.create({
   timeout: 60000
 })
 
+const getResponseMessage = (payload: unknown): string | undefined => {
+  if (!payload || typeof payload !== 'object') {
+    return undefined
+  }
+  const { message, msg } = payload as { message?: string; msg?: string }
+  return message || msg
+}
+
+const isSuccessResponse = (payload: unknown): boolean => {
+  if (!payload || typeof payload !== 'object') {
+    return false
+  }
+  const typedPayload = payload as { success?: boolean; code?: number }
+  if (typeof typedPayload.success === 'boolean') {
+    return typedPayload.success
+  }
+  return typedPayload.code === 0
+}
+
 request.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token')
@@ -22,20 +41,21 @@ request.interceptors.request.use(
 
 request.interceptors.response.use(
   (response) => {
-    const { code, msg, data } = response.data
-    if (code === 0) {
-      return data
-    } else {
-      showToast(msg || '请求失败')
-      if (code === 401) {
-        localStorage.removeItem('token')
-        router.replace('/login')
-      }
-      return Promise.reject(new Error(msg || 'Error'))
+    const payload = response.data
+    if (isSuccessResponse(payload)) {
+      return payload.data
     }
+    const message = getResponseMessage(payload) || '请求失败'
+    showToast(message)
+    if (response.status === 401) {
+      localStorage.removeItem('token')
+      router.replace('/login')
+    }
+    return Promise.reject(new Error(message))
   },
   (error) => {
-    showToast(error.message || '请求失败')
+    const message = getResponseMessage(error.response?.data) || error.message || '请求失败'
+    showToast(message)
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
       router.replace('/login')

@@ -7,7 +7,7 @@ spring:
   datasource:
     url: ${LESSON_AI_DB_URL:jdbc:postgresql://192.168.12.22:5432/lessonai}
     username: ${LESSON_AI_DB_USERNAME:lessonai_user}
-    password: ${LESSON_AI_DB_PASSWORD:postgres}
+    password: ${LESSON_AI_DB_PASSWORD:lessonai}
     driver-class-name: org.postgresql.Driver
   jackson:
     default-property-inclusion: non_null

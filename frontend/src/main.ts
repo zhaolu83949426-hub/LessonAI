@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import Vant from 'vant'
 import App from './App.vue'
 import router from './router'
-import { ConfigProvider } from 'vant'
 import 'vant/lib/index.css'
 import './styles/index.css'
 
@@ -13,6 +13,6 @@ pinia.use(piniaPluginPersistedstate)
 
 app.use(pinia)
 app.use(router)
-app.use(ConfigProvider)
+app.use(Vant)
 
 app.mount('#app')

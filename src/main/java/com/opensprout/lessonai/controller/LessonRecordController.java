@@ -30,12 +30,12 @@ public class LessonRecordController {
     }
 
     @GetMapping("/session/{sessionId}")
-    public ApiResponse<List<LessonRecordRespVO>> listBySessionId(@PathVariable Long sessionId) {
+    public ApiResponse<List<LessonRecordRespVO>> listBySessionId(@PathVariable("sessionId") Long sessionId) {
         return ApiResponse.success(lessonRecordService.listBySessionId(sessionId));
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<LessonRecordRespVO> update(@PathVariable Long id,
+    public ApiResponse<LessonRecordRespVO> update(@PathVariable("id") Long id,
                                                   @Valid @RequestBody LessonRecordUpdateReqVO reqVO) {
         return ApiResponse.success(lessonRecordService.update(id, reqVO));
     }

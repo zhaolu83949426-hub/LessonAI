@@ -22,26 +22,15 @@ public class LlmConfigBootstrap implements CommandLineRunner {
                 .eq(LlmConfigDO::getIsDefault, Boolean.TRUE)
                 .eq(LlmConfigDO::getDeleted, Boolean.FALSE)
                 .last("LIMIT 1"));
-        if (config == null) {
-            config = new LlmConfigDO();
-            config.setEnabled(Boolean.TRUE);
-            config.setIsDefault(Boolean.TRUE);
-            config.setSortOrder(DEFAULT_SORT_ORDER);
-            applyDefaultConfig(config);
-            llmConfigMapper.insert(config);
+        if (config != null) {
             return;
         }
+        config = new LlmConfigDO();
+        config.setEnabled(Boolean.TRUE);
+        config.setIsDefault(Boolean.TRUE);
+        config.setSortOrder(DEFAULT_SORT_ORDER);
         applyDefaultConfig(config);
-        if (!Boolean.TRUE.equals(config.getEnabled())) {
-            config.setEnabled(Boolean.TRUE);
-        }
-        if (!Boolean.TRUE.equals(config.getIsDefault())) {
-            config.setIsDefault(Boolean.TRUE);
-        }
-        if (config.getSortOrder() == null) {
-            config.setSortOrder(DEFAULT_SORT_ORDER);
-        }
-        llmConfigMapper.updateById(config);
+        llmConfigMapper.insert(config);
     }
 
     private void applyDefaultConfig(LlmConfigDO config) {

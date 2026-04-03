@@ -35,17 +35,17 @@ public class ChatSessionController {
     }
 
     @GetMapping("/{id}")
-    public ApiResponse<ChatSessionRespVO> get(@PathVariable Long id) {
+    public ApiResponse<ChatSessionRespVO> get(@PathVariable("id") Long id) {
         return ApiResponse.success(chatSessionService.get(id));
     }
 
     @GetMapping("/{id}/messages")
-    public ApiResponse<List<SessionMessageRespVO>> listMessages(@PathVariable Long id) {
+    public ApiResponse<List<SessionMessageRespVO>> listMessages(@PathVariable("id") Long id) {
         return ApiResponse.success(chatSessionService.listMessages(id));
     }
 
     @DeleteMapping("/{id}")
-    public ApiResponse<Void> delete(@PathVariable Long id) {
+    public ApiResponse<Void> delete(@PathVariable("id") Long id) {
         chatSessionService.delete(id);
         return ApiResponse.success();
     }

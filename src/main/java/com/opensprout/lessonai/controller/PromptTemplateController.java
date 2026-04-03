@@ -35,19 +35,20 @@ public class PromptTemplateController {
     }
 
     @PutMapping("/{id}")
-    public ApiResponse<Void> update(@PathVariable Long id, @Valid @RequestBody PromptTemplateSaveReqVO reqVO) {
+    public ApiResponse<Void> update(@PathVariable("id") Long id,
+                                    @Valid @RequestBody PromptTemplateSaveReqVO reqVO) {
         promptTemplateService.update(id, reqVO);
         return ApiResponse.success();
     }
 
     @DeleteMapping("/{id}")
-    public ApiResponse<Void> delete(@PathVariable Long id) {
+    public ApiResponse<Void> delete(@PathVariable("id") Long id) {
         promptTemplateService.delete(id);
         return ApiResponse.success();
     }
 
     @GetMapping("/{id}")
-    public ApiResponse<PromptTemplateRespVO> get(@PathVariable Long id) {
+    public ApiResponse<PromptTemplateRespVO> get(@PathVariable("id") Long id) {
         return ApiResponse.success(promptTemplateService.get(id));
     }
 

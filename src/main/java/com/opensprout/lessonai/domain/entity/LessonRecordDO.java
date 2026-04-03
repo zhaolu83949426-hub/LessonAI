@@ -4,12 +4,14 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.opensprout.lessonai.config.mybatis.JsonbStringTypeHandler;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.ibatis.type.JdbcType;
 
 @Getter
 @Setter
-@TableName("lesson_records")
+@TableName(value = "lesson_records", autoResultMap = true)
 public class LessonRecordDO extends BaseDO {
 
     /**
@@ -51,7 +53,7 @@ public class LessonRecordDO extends BaseDO {
     /**
      * 输入参数快照
      */
-    @TableField("input_payload")
+    @TableField(value = "input_payload", typeHandler = JsonbStringTypeHandler.class, jdbcType = JdbcType.OTHER)
     private String inputPayload;
 
     /**
