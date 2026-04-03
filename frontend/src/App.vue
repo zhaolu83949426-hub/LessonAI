@@ -13,8 +13,8 @@ const theme = ref<ConfigProviderTheme>('light')
 
 <style>
 .app-root {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  background-color: var(--van-background-2);
+  background: transparent;
 }
 </style>

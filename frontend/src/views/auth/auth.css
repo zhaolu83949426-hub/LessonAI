@@ -1,0 +1,168 @@
+.auth-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.auth-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(14px);
+  opacity: 0.58;
+}
+
+.auth-glow-left {
+  top: -120px;
+  left: -72px;
+  width: 220px;
+  height: 220px;
+  background: rgba(142, 216, 180, 0.62);
+}
+
+.auth-glow-right {
+  top: 48px;
+  right: -68px;
+  width: 210px;
+  height: 210px;
+  background: rgba(148, 173, 255, 0.42);
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 28px 16px 24px;
+}
+
+.brand-card,
+.login-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(124, 118, 255, 0.1);
+  box-shadow: 0 20px 34px rgba(111, 103, 248, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.brand-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-radius: 30px;
+  padding: 24px 22px;
+  margin-bottom: 22px;
+}
+
+.brand-copy {
+  flex: 1;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #7f7ba7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 32px;
+  line-height: 1.02;
+  font-weight: 700;
+  color: #1f1b37;
+}
+
+.subtitle {
+  margin: 0;
+  color: #76719a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.brand-visual {
+  width: 38%;
+  min-width: 108px;
+}
+
+.brand-illustration {
+  width: 100%;
+  filter: drop-shadow(0 14px 26px rgba(79, 74, 147, 0.14));
+}
+
+.login-card {
+  border-radius: 28px;
+  padding: 24px 18px;
+}
+
+.field-label {
+  margin: 0 0 8px;
+  color: #6f6a93;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field-wrap {
+  margin-bottom: 16px;
+}
+
+.input-field {
+  background: #f5f6ff;
+  border-radius: 18px;
+  padding: 4px 14px;
+}
+
+.input-field:deep(.van-field__control) {
+  min-height: 44px;
+  color: #1f1b37;
+}
+
+.input-field:deep(.van-field__control::placeholder) {
+  color: #9a96bd;
+}
+
+.submit-btn-wrap {
+  margin-top: 28px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #8b83f7, #6f67f8);
+  border: none;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 16px 24px rgba(111, 103, 248, 0.22);
+}
+
+.link-wrap {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.link-text {
+  color: #615bb7;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .brand-card {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand-visual {
+    width: 52%;
+    align-self: center;
+  }
+}

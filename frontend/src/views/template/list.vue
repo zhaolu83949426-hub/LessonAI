@@ -85,78 +85,96 @@ const onRefresh = () => {
 .template-list-page {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
+
 .top-wash {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 144px;
-  background-color: #FFF1DF;
+  height: 220px;
+  background:
+    radial-gradient(circle at top left, rgba(144, 204, 255, 0.42), transparent 35%),
+    linear-gradient(180deg, rgba(201, 197, 255, 0.92), rgba(237, 248, 255, 0));
   z-index: 0;
 }
+
 .content-wrapper {
   position: relative;
   z-index: 1;
-  padding: 62px 16px 20px;
+  padding: 28px 16px 20px;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
+
 .page-title {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
-  color: #2F2A24;
+  color: #1f1b37;
   margin: 0;
 }
+
 .new-btn {
-  background-color: #2F7D4A;
+  background: linear-gradient(135deg, #8b83f7, #6f67f8);
   border: none;
+  box-shadow: 0 16px 24px rgba(111, 103, 248, 0.18);
 }
+
 .hint-card {
-  background: #FFFDF8;
-  border-radius: 18px;
-  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 24px;
+  padding: 14px 16px;
   margin-bottom: 20px;
-  border: 1px solid #E6DFD4;
-  color: #6F675D;
+  border: 1px solid rgba(124, 118, 255, 0.1);
+  color: #6f6a93;
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.6;
+  box-shadow: 0 16px 28px rgba(111, 103, 248, 0.08);
 }
+
 .list-container {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+
 .template-item {
-  background: #FFFFFF;
-  border-radius: 16px;
-  padding: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 26px;
+  padding: 18px;
   margin-bottom: 14px;
-  border: 1px solid #E6DFD4;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  border: 1px solid rgba(124, 118, 255, 0.1);
+  box-shadow: 0 20px 34px rgba(111, 103, 248, 0.08);
+  backdrop-filter: blur(10px);
 }
+
 .title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
+
 .title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #2F2A24;
+  color: #1f1b37;
 }
+
 .desc-row {
   font-size: 13px;
-  color: #6F675D;
+  color: #76719a;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.6;
 }
 </style>
