@@ -12,7 +12,7 @@
         <div class="brand-visual">
           <img
             class="brand-illustration"
-            src="/illustrations/hero-learning.svg"
+            :src="heroIllustration"
             alt="登录页插图"
           />
         </div>
@@ -65,6 +65,7 @@ import { showToast } from 'vant'
 
 const router = useRouter()
 const userStore = useUserStore()
+const heroIllustration = `${import.meta.env.BASE_URL}illustrations/hero-learning.svg`
 
 const account = ref('')
 const password = ref('')

@@ -3,7 +3,7 @@
 set -euo pipefail
 
 APP_NAME="lesson-ai"
-APP_PORT="${APP_PORT:-8080}"
+APP_PORT="${APP_PORT:-17891}"
 APP_HOME="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 JAR_PATH="${JAR_PATH:-$(find "$APP_HOME/target" -maxdepth 1 -type f -name '*.jar' ! -name '*original*.jar' | head -n 1)}"
 PID_FILE="$APP_HOME/$APP_NAME.pid"

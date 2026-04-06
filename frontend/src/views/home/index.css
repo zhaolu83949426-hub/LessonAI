@@ -1,7 +1,6 @@
 .home-page {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
 }
 
 .home-glow {
@@ -9,6 +8,7 @@
   border-radius: 999px;
   filter: blur(12px);
   opacity: 0.55;
+  pointer-events: none;
 }
 
 .home-glow-left {

@@ -56,6 +56,8 @@ const handleLogout = () => {
   flex: 1;
   overflow-y: auto;
   padding-bottom: 132px;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .bottom-nav-wrap {

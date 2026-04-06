@@ -12,7 +12,7 @@
         <div class="brand-visual">
           <img
             class="brand-illustration"
-            src="/illustrations/card-sketching.svg"
+            :src="registerIllustration"
             alt="注册页插图"
           />
         </div>
@@ -73,6 +73,7 @@ import { register } from '@/api'
 import { showSuccessToast } from 'vant'
 
 const router = useRouter()
+const registerIllustration = `${import.meta.env.BASE_URL}illustrations/card-sketching.svg`
 
 const account = ref('')
 const nickname = ref('')

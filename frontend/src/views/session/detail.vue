@@ -22,7 +22,7 @@
       </div>
 
       <div class="chat-panel">
-        <div class="chat-timeline" ref="timelineRef">
+        <div class="chat-timeline">
           <div 
             v-for="msg in messages" 
             :key="msg.id" 
@@ -35,6 +35,7 @@
               <div class="message-time">{{ formatMessageTime(msg.createdAt || msg.updatedAt) }}</div>
             </div>
           </div>
+          <div ref="bottomAnchorRef" class="bottom-anchor"></div>
         </div>
       </div>
 
@@ -73,7 +74,7 @@ const session = ref<any>(null)
 const messages = ref<any[]>([])
 const inputMsg = ref('')
 const sending = ref(false)
-const timelineRef = ref<HTMLElement | null>(null)
+const bottomAnchorRef = ref<HTMLElement | null>(null)
 
 const loadData = async () => {
   try {
@@ -91,9 +92,12 @@ onMounted(() => {
 
 const scrollToBottom = () => {
   nextTick(() => {
-    if (timelineRef.value) {
-      timelineRef.value.scrollTop = timelineRef.value.scrollHeight
-    }
+    requestAnimationFrame(() => {
+      bottomAnchorRef.value?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end'
+      })
+    })
   })
 }
 

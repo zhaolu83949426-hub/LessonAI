@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname, '')
 
   return {
+    base: env.VITE_PUBLIC_BASE || '/',
     plugins: [vue()],
     resolve: {
       alias: {
@@ -18,7 +19,7 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_DEV_PROXY_TARGET || 'http://localhost:8080',
+          target: env.VITE_DEV_PROXY_TARGET || 'http://localhost:17891',
           changeOrigin: true
         }
       }
