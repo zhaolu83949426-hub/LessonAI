@@ -71,4 +71,19 @@ public class LessonRecordDO extends BaseDO {
      */
     private String editedContent;
 
+    /**
+     * 质量评分
+     */
+    private Integer feedbackRating;
+
+    /**
+     * 质量等级
+     */
+    private String feedbackLevel;
+
+    /**
+     * 质量反馈说明
+     */
+    private String feedbackComment;
+
 }

@@ -13,4 +13,8 @@ public class UserProfileRespVO {
 
     private String nickname;
 
+    private Long defaultTemplateId;
+
+    private String defaultStyle;
+
 }

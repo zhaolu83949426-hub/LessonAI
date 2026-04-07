@@ -1,13 +1,25 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+type UserInfo = {
+  id: number
+  account: string
+  nickname: string
+  defaultTemplateId: number | null
+  defaultStyle: string
+}
+
+const EMPTY_USER: UserInfo = {
+  id: 0,
+  account: '',
+  nickname: '',
+  defaultTemplateId: null,
+  defaultStyle: ''
+}
+
 export const useUserStore = defineStore('user', () => {
   const token = ref(localStorage.getItem('token') || '')
-  const userInfo = ref({
-    id: 0,
-    account: '',
-    nickname: ''
-  })
+  const userInfo = ref<UserInfo>({ ...EMPTY_USER })
 
   const setToken = (newToken: string) => {
     token.value = newToken
@@ -15,12 +27,18 @@ export const useUserStore = defineStore('user', () => {
   }
 
   const setUserInfo = (info: any) => {
-    userInfo.value = info
+    userInfo.value = {
+      id: info?.id || 0,
+      account: info?.account || '',
+      nickname: info?.nickname || '',
+      defaultTemplateId: info?.defaultTemplateId || null,
+      defaultStyle: info?.defaultStyle || ''
+    }
   }
 
   const logout = () => {
     token.value = ''
-    userInfo.value = { id: 0, account: '', nickname: '' }
+    userInfo.value = { ...EMPTY_USER }
     localStorage.removeItem('token')
   }
 

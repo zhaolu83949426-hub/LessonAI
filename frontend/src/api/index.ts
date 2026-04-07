@@ -4,6 +4,8 @@ import request from '@/utils/request'
 export const login = (data: any): Promise<any> => request.post('/auth/login', data)
 export const register = (data: any): Promise<any> => request.post('/auth/register', data)
 export const getUserInfo = (): Promise<any> => request.get('/auth/me')
+export const updateUserProfile = (data: any): Promise<any> => request.put('/auth/me', data)
+export const updateUserPassword = (data: any): Promise<any> => request.put('/auth/password', data)
 
 // Template API
 export const getTemplates = (): Promise<any> => request.get('/templates')
@@ -11,6 +13,7 @@ export const getTemplateById = (id: string | number): Promise<any> => request.ge
 export const createTemplate = (data: any): Promise<any> => request.post('/templates', data)
 export const updateTemplate = (id: string | number, data: any): Promise<any> => request.put(`/templates/${id}`, data)
 export const deleteTemplate = (id: string | number): Promise<any> => request.delete(`/templates/${id}`)
+export const duplicateTemplate = (id: string | number): Promise<any> => request.post(`/templates/${id}/duplicate`)
 
 // LLM API
 export const getLlmOptions = (): Promise<any> => request.get('/llm-configs/options')
@@ -27,3 +30,4 @@ export const getSessionMessages = (id: string | number): Promise<any> => request
 export const generateLesson = (data: any): Promise<any> => request.post('/lesson-records/generate', data)
 export const getLessonRecordsBySession = (sessionId: string | number): Promise<any> => request.get(`/lesson-records/session/${sessionId}`)
 export const updateLessonRecord = (id: string | number, data: any): Promise<any> => request.put(`/lesson-records/${id}`, data)
+export const updateLessonFeedback = (id: string | number, data: any): Promise<any> => request.put(`/lesson-records/${id}/feedback`, data)

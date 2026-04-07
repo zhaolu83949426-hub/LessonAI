@@ -28,17 +28,19 @@
             finished-text="没有更多了"
             @load="onLoad"
           >
-            <div 
-              class="template-item" 
-              v-for="item in list" 
-              :key="item.id"
-              @click="$router.push(`/templates/${item.id}/edit`)"
-            >
-              <div class="title-row">
+            <div class="template-item" v-for="item in list" :key="item.id">
+              <div class="title-row" @click="$router.push(`/templates/${item.id}/edit`)">
                 <span class="title">{{ item.name }}</span>
                 <van-icon name="arrow" color="#6F675D" />
               </div>
+              <div class="meta-row">
+                <span class="meta-chip" v-if="item.category">{{ item.category }}</span>
+                <span class="meta-chip" v-if="item.tags">{{ item.tags }}</span>
+              </div>
               <div class="desc-row">{{ item.content }}</div>
+              <div class="action-row">
+                <van-button size="small" round plain type="primary" @click.stop="handleDuplicate(item.id)">模板化复用</van-button>
+              </div>
             </div>
           </van-list>
         </van-pull-refresh>
@@ -49,8 +51,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { getTemplates } from '@/api'
-import { showToast } from 'vant'
+import { duplicateTemplate, getTemplates } from '@/api'
+import { showSuccessToast, showToast } from 'vant'
 
 const list = ref<any[]>([])
 const loading = ref(false)
@@ -78,6 +80,16 @@ const onRefresh = () => {
   finished.value = false
   loading.value = true
   onLoad()
+}
+
+const handleDuplicate = async (id: number) => {
+  try {
+    await duplicateTemplate(id)
+    showSuccessToast('已生成复用模板')
+    onRefresh()
+  } catch (_err) {
+    showToast('模板复用失败')
+  }
 }
 </script>
 
@@ -176,5 +188,24 @@ const onRefresh = () => {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.6;
+}
+
+.meta-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.meta-chip {
+  font-size: 12px;
+  color: #6f675d;
+  background: #f4ecdf;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.action-row {
+  margin-top: 12px;
 }
 </style>

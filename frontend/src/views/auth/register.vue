@@ -70,9 +70,11 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { register } from '@/api'
+import { useUserStore } from '@/stores/user'
 import { showSuccessToast } from 'vant'
 
 const router = useRouter()
+const userStore = useUserStore()
 const registerIllustration = `${import.meta.env.BASE_URL}illustrations/card-sketching.svg`
 
 const account = ref('')
@@ -83,9 +85,11 @@ const loading = ref(false)
 const onSubmit = async () => {
   try {
     loading.value = true
-    await register({ account: account.value, nickname: nickname.value, password: password.value })
-    showSuccessToast('注册成功，请登录')
-    router.push('/login')
+    const resp = await register({ account: account.value, nickname: nickname.value, password: password.value })
+    userStore.setToken(resp.token)
+    userStore.setUserInfo(resp.user)
+    showSuccessToast('注册成功')
+    router.replace('/')
   } catch (err: any) {
     // handled in request interceptor
   } finally {

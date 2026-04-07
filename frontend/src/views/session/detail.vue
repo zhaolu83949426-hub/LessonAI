@@ -49,7 +49,7 @@
           <input 
             type="text" 
             v-model="inputMsg" 
-            placeholder="继续追问..." 
+            :placeholder="sending ? sendingStage || '生成中...' : '继续追问...'" 
             class="msg-input"
             @keyup.enter="handleSend"
           />
@@ -74,6 +74,7 @@ const session = ref<any>(null)
 const messages = ref<any[]>([])
 const inputMsg = ref('')
 const sending = ref(false)
+const sendingStage = ref('')
 const bottomAnchorRef = ref<HTMLElement | null>(null)
 
 const loadData = async () => {
@@ -103,35 +104,40 @@ const scrollToBottom = () => {
 
 const handleSend = async () => {
   if (!inputMsg.value.trim() || sending.value) return
-  
-  const msgContent = inputMsg.value
-  messages.value.push({
-    id: Date.now(),
-    role: 'user',
-    content: msgContent,
-    createdAt: new Date().toISOString()
-  })
-  inputMsg.value = ''
-  scrollToBottom()
+
+  const msgContent = inputMsg.value.trim()
 
   sending.value = true
-  showLoadingToast({ message: '生成中...', forbidClick: true, duration: 0 })
+  sendingStage.value = '正在整理追问内容...'
+  showLoadingToast({ message: sendingStage.value, forbidClick: true, duration: 0 })
 
   try {
+    messages.value.push({
+      id: Date.now(),
+      role: 'user',
+      content: msgContent,
+      createdAt: new Date().toISOString()
+    })
+    inputMsg.value = ''
+    scrollToBottom()
+
+    sendingStage.value = '正在生成更新后的教案...'
+    showLoadingToast({ message: sendingStage.value, forbidClick: true, duration: 0 })
     await generateLesson({
       sessionId: sessionId,
       topic: session.value?.title || msgContent.substring(0, 100),
       userMessage: msgContent
     })
-    
-    // 生成成功，重新拉取拉取会话和消息（主要是更新了 currentResultId）
+
     await loadData()
     closeToast()
   } catch (err: any) {
     closeToast()
+    inputMsg.value = msgContent
+    messages.value = messages.value.filter(item => item.content !== msgContent || item.role !== 'user' || item.id !== messages.value[messages.value.length - 1]?.id)
     showToast('回复失败: ' + (err.message || 'Error'))
-    // 移除本地发出的消息？ MVP 暂时不管
   } finally {
+    sendingStage.value = ''
     sending.value = false
   }
 }

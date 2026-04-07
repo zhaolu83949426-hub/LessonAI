@@ -15,6 +15,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'templates',
         name: 'TemplateList',
         component: () => import('@/views/template/list.vue')
+      },
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('@/views/profile/index.vue')
       }
     ]
   },

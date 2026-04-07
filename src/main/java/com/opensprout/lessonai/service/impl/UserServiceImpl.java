@@ -7,7 +7,9 @@ import com.opensprout.lessonai.mapper.UserMapper;
 import com.opensprout.lessonai.model.auth.AuthLoginReqVO;
 import com.opensprout.lessonai.model.auth.AuthRegisterReqVO;
 import com.opensprout.lessonai.model.auth.AuthTokenRespVO;
+import com.opensprout.lessonai.model.auth.UserPasswordUpdateReqVO;
 import com.opensprout.lessonai.model.auth.UserProfileRespVO;
+import com.opensprout.lessonai.model.auth.UserProfileUpdateReqVO;
 import com.opensprout.lessonai.security.JwtTokenProvider;
 import com.opensprout.lessonai.security.SecurityUtils;
 import com.opensprout.lessonai.service.UserService;
@@ -55,7 +57,29 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserProfileRespVO getCurrentUserProfile() {
         UserDO user = SecurityUtils.getCurrentUser();
-        return new UserProfileRespVO(user.getId(), user.getAccount(), user.getNickname());
+        return toProfile(user);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public UserProfileRespVO updateProfile(UserProfileUpdateReqVO reqVO) {
+        UserDO user = SecurityUtils.getCurrentUser();
+        user.setNickname(reqVO.getNickname().trim());
+        user.setDefaultTemplateId(reqVO.getDefaultTemplateId());
+        user.setDefaultStyle(normalizeStyle(reqVO.getDefaultStyle()));
+        userMapper.updateById(user);
+        return toProfile(user);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updatePassword(UserPasswordUpdateReqVO reqVO) {
+        UserDO user = SecurityUtils.getCurrentUser();
+        if (!passwordEncoder.matches(reqVO.getOldPassword(), user.getPasswordHash())) {
+            throw new BusinessException("原密码错误");
+        }
+        user.setPasswordHash(passwordEncoder.encode(reqVO.getNewPassword()));
+        userMapper.updateById(user);
     }
 
     @Override
@@ -65,7 +89,24 @@ public class UserServiceImpl implements UserService {
 
     private AuthTokenRespVO buildTokenResp(UserDO user) {
         String token = jwtTokenProvider.createToken(user.getId(), user.getAccount());
-        return new AuthTokenRespVO(token, new UserProfileRespVO(user.getId(), user.getAccount(), user.getNickname()));
+        return new AuthTokenRespVO(token, toProfile(user));
+    }
+
+    private UserProfileRespVO toProfile(UserDO user) {
+        return new UserProfileRespVO(
+                user.getId(),
+                user.getAccount(),
+                user.getNickname(),
+                user.getDefaultTemplateId(),
+                user.getDefaultStyle()
+        );
+    }
+
+    private String normalizeStyle(String style) {
+        if (style == null) {
+            return "";
+        }
+        return style.trim();
     }
 
 }

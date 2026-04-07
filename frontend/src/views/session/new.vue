@@ -31,9 +31,14 @@
           <div class="card-right">切换</div>
         </div>
 
+        <div class="draft-bar" v-if="hasDraftCache">
+          <span>已恢复上次草稿</span>
+          <button class="draft-clear-btn" type="button" @click="clearDraft">清空草稿</button>
+        </div>
+
         <!-- 说明 -->
         <div class="guide-card">
-          发送后开始对话，生成完成后可查看教案。
+          {{ sendingHint }}
         </div>
 
         <div class="chat-empty">
@@ -90,12 +95,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { computed, ref, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 import { getTemplates, getLlmOptions, getDefaultLlm, createSession, generateLesson } from '@/api'
 import { showToast, showLoadingToast, closeToast } from 'vant'
 
+const SESSION_DRAFT_KEY = 'lesson-ai-session-draft'
 const router = useRouter()
 const userStore = useUserStore()
 
@@ -113,10 +119,48 @@ const showModelPicker = ref(false)
 
 const inputMsg = ref('')
 const sending = ref(false)
+const generatingStage = ref('')
 
-// 为了展示右下角漂浮按钮，这里提供一个变量，实际第一次创建会话前是空
 const currentResultId = ref<number | null>(null)
 const sessionId = ref<number | null>(null)
+const hasDraftCache = ref(false)
+
+const sendingHint = computed(() => generatingStage.value || '发送后开始对话，生成完成后可查看教案。')
+
+const saveDraft = () => {
+  localStorage.setItem(SESSION_DRAFT_KEY, JSON.stringify({
+    inputMsg: inputMsg.value,
+    templateId: currentTemplate.value?.id || null,
+    modelId: currentModel.value?.id || null
+  }))
+  hasDraftCache.value = Boolean(inputMsg.value.trim() || currentTemplate.value?.id || currentModel.value?.id)
+}
+
+const restoreDraft = () => {
+  const raw = localStorage.getItem(SESSION_DRAFT_KEY)
+  if (!raw) {
+    return
+  }
+  try {
+    const draft = JSON.parse(raw)
+    inputMsg.value = draft.inputMsg || ''
+    if (draft.templateId) {
+      currentTemplate.value = templates.value.find(item => item.id === draft.templateId) || currentTemplate.value
+    }
+    if (draft.modelId) {
+      currentModel.value = models.value.find(item => item.id === draft.modelId) || currentModel.value
+    }
+    hasDraftCache.value = Boolean(draft.inputMsg || draft.templateId || draft.modelId)
+  } catch (_err) {
+    localStorage.removeItem(SESSION_DRAFT_KEY)
+  }
+}
+
+const clearDraft = () => {
+  localStorage.removeItem(SESSION_DRAFT_KEY)
+  inputMsg.value = ''
+  hasDraftCache.value = false
+}
 
 onMounted(async () => {
   try {
@@ -130,13 +174,19 @@ onMounted(async () => {
     templateOptions.value = templates.value.map(t => ({ text: t.name, value: t.id }))
     modelOptions.value = models.value.map(m => ({ text: m.name, value: m.id }))
 
+    if (!currentTemplate.value && userStore.userInfo.defaultTemplateId) {
+      currentTemplate.value = templates.value.find(t => t.id === userStore.userInfo.defaultTemplateId) || null
+    }
     if (!currentTemplate.value && templates.value.length > 0) {
       currentTemplate.value = templates.value[0]
     }
+    restoreDraft()
   } catch (e) {
     showToast('加载配置失败')
   }
 })
+
+watch([inputMsg, currentTemplate, currentModel], () => saveDraft(), { deep: true })
 
 const onConfirmTemplate = ({ selectedOptions }: any) => {
   currentTemplate.value = templates.value.find(t => t.id === selectedOptions[0].value)
@@ -156,10 +206,10 @@ const handleSend = async () => {
   }
 
   sending.value = true
-  showLoadingToast({ message: '生成中...', forbidClick: true, duration: 0 })
+  generatingStage.value = '正在创建会话...'
+  showLoadingToast({ message: generatingStage.value, forbidClick: true, duration: 0 })
 
   try {
-    // 1. 创建会话 (如果还没有)
     let sId = sessionId.value
     if (!sId) {
       const sessionRet: any = await createSession({
@@ -171,15 +221,16 @@ const handleSend = async () => {
       sessionId.value = sId
     }
 
-    // 2. 发送生成请求
+    generatingStage.value = '正在生成教案内容...'
+    showLoadingToast({ message: generatingStage.value, forbidClick: true, duration: 0 })
     const generateRet: any = await generateLesson({
       sessionId: sId,
       topic: inputMsg.value.substring(0, 100),
       userMessage: inputMsg.value
     })
     currentResultId.value = generateRet?.id ?? null
-    
-    // 生成成功，跳转会话详情页
+    localStorage.removeItem(SESSION_DRAFT_KEY)
+    hasDraftCache.value = false
     closeToast()
     showToast('生成成功')
     router.replace(`/session/${sId}`)
@@ -188,6 +239,7 @@ const handleSend = async () => {
     closeToast()
     showToast('生成失败: ' + (err.message || 'Error'))
   } finally {
+    generatingStage.value = ''
     sending.value = false
   }
 }
@@ -200,3 +252,22 @@ const goToResult = () => {
 </script>
 
 <style scoped src="./new.css"></style>
+<style scoped>
+.draft-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  background: #fff5df;
+  color: #6f675d;
+  border-radius: 16px;
+  padding: 10px 14px;
+}
+
+.draft-clear-btn {
+  border: none;
+  background: transparent;
+  color: #2f7d4a;
+  font-weight: 600;
+}
+</style>

@@ -2,7 +2,6 @@ package com.opensprout.lessonai.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opensprout.lessonai.common.exception.BusinessException;
 import com.opensprout.lessonai.domain.entity.ChatSessionDO;
@@ -13,6 +12,7 @@ import com.opensprout.lessonai.domain.entity.SessionMessageDO;
 import com.opensprout.lessonai.mapper.LessonRecordMapper;
 import com.opensprout.lessonai.mapper.SessionMessageMapper;
 import com.opensprout.lessonai.model.lesson.LessonGenerateReqVO;
+import com.opensprout.lessonai.model.lesson.LessonFeedbackUpdateReqVO;
 import com.opensprout.lessonai.model.lesson.LessonRecordRespVO;
 import com.opensprout.lessonai.model.lesson.LessonRecordUpdateReqVO;
 import com.opensprout.lessonai.security.SecurityUtils;
@@ -122,6 +122,20 @@ public class LessonRecordServiceImpl implements LessonRecordService {
         lessonRecordMapper.updateById(record);
         return toResp(record);
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public LessonRecordRespVO updateFeedback(Long id, LessonFeedbackUpdateReqVO reqVO) {
+        LessonRecordDO record = lessonRecordMapper.selectById(id);
+        if (record == null || !record.getUserId().equals(SecurityUtils.getCurrentUserId())) {
+            throw new BusinessException("教案记录不存在");
+        }
+        record.setFeedbackRating(reqVO.getFeedbackRating());
+        record.setFeedbackLevel(reqVO.getFeedbackLevel().trim());
+        record.setFeedbackComment(normalizeComment(reqVO.getFeedbackComment()));
+        lessonRecordMapper.updateById(record);
+        return toResp(record);
+    }
     private void saveMessage(Long sessionId, String role, String content, Long lessonRecordId) {
         SessionMessageDO message = new SessionMessageDO();
         message.setSessionId(sessionId);
@@ -185,10 +199,12 @@ public class LessonRecordServiceImpl implements LessonRecordService {
     }
 
     private LessonRecordRespVO toResp(LessonRecordDO record) {
+        PromptTemplateDO template = promptTemplateService.getByIdAndUserId(record.getTemplateId(), record.getUserId());
         return LessonRecordRespVO.builder()
                 .id(record.getId())
                 .sessionId(record.getSessionId())
                 .templateId(record.getTemplateId())
+                .templateName(template == null ? null : template.getName())
                 .llmConfigId(record.getLlmConfigId())
                 .modelName(record.getModelName())
                 .topic(record.getTopic())
@@ -196,8 +212,18 @@ public class LessonRecordServiceImpl implements LessonRecordService {
                 .finalPrompt(record.getFinalPrompt())
                 .resultContent(record.getResultContent())
                 .editedContent(record.getEditedContent())
+                .feedbackRating(record.getFeedbackRating())
+                .feedbackLevel(record.getFeedbackLevel())
+                .feedbackComment(record.getFeedbackComment())
                 .createdAt(record.getCreatedAt())
                 .updatedAt(record.getUpdatedAt())
                 .build();
+    }
+
+    private String normalizeComment(String comment) {
+        if (comment == null) {
+            return "";
+        }
+        return comment.trim();
     }
 }

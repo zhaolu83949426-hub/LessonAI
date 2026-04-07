@@ -8,6 +8,12 @@ Default to Chinese in user-facing replies unless the user explicitly requests an
 
 Do not propose follow-up tasks or enhancement at the end of your final answer.
 
+## Git Commit Messages
+
+- All git commit messages must be written in Chinese.
+- Prefer concise Chinese commit messages that describe the business purpose first, rather than implementation details.
+- Do not use English conventional commit prefixes such as `feat`, `fix`, or `chore`.
+
 ## Encoding Guardrails
 
 When reading or fixing potential mojibake in this repository:
@@ -83,7 +89,7 @@ Routing table:
 
 | Scenario | Skill | Trigger |
 |----------|-------|---------|
-| Multi-step task tracking / autonomous execution | `taskmaster` | 3+ ordered steps that produce file changes, or "track tasks", "make a plan", "track progress", "long task", "big project", "autonomous", "从零开始", "长时任务" |
+| Multi-step task tracking / autonomous execution | `taskmaster` | 3+ ordered steps that produce file changes, or "track tasks", "make a plan", "track progress", "long task", "big project", "autonomous", "锟斤拷锟姐开始", "锟斤拷时锟斤拷锟斤拷" |
 
 ## Taskmaster Notes
 

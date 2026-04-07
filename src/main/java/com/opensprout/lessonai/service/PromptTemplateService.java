@@ -18,6 +18,8 @@ public interface PromptTemplateService {
 
     List<PromptTemplateRespVO> list();
 
+    Long createFromExisting(Long sourceId);
+
     PromptTemplateDO getByIdAndUserId(Long id, Long userId);
 
 }

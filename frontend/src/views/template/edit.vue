@@ -19,6 +19,8 @@
           class="name-input"
           :border="false"
         />
+        <van-field v-model="formData.category" placeholder="请输入模板分类" :border="false" />
+        <van-field v-model="formData.tags" placeholder="请输入模板标签，多个用逗号分隔" :border="false" />
       </div>
 
       <div class="editor-wrap">
@@ -61,7 +63,9 @@ const isNew = computed(() => idParam === 'new')
 
 const formData = ref({
   name: '',
-  content: ''
+  content: '',
+  category: '',
+  tags: ''
 })
 const saving = ref(false)
 
@@ -71,6 +75,8 @@ onMounted(async () => {
       const res: any = await getTemplateById(idParam)
       formData.value.name = res.name
       formData.value.content = res.content
+      formData.value.category = res.category || ''
+      formData.value.tags = res.tags || ''
     } catch (e) {
       showToast('获取细节失败')
     }

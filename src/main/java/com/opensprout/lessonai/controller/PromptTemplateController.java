@@ -52,4 +52,9 @@ public class PromptTemplateController {
         return ApiResponse.success(promptTemplateService.get(id));
     }
 
+    @PostMapping("/{id}/duplicate")
+    public ApiResponse<Long> duplicate(@PathVariable("id") Long id) {
+        return ApiResponse.success(promptTemplateService.createFromExisting(id));
+    }
+
 }

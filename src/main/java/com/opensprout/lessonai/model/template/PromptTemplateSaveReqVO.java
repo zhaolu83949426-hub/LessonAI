@@ -17,4 +17,10 @@ public class PromptTemplateSaveReqVO {
     @Size(max = 10000, message = "模板内容长度不能超过10000个字符")
     private String content;
 
+    @Size(max = 32, message = "模板分类长度不能超过32个字符")
+    private String category;
+
+    @Size(max = 255, message = "模板标签长度不能超过255个字符")
+    private String tags;
+
 }

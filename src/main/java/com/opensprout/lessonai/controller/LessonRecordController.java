@@ -2,6 +2,7 @@ package com.opensprout.lessonai.controller;
 
 import com.opensprout.lessonai.common.model.ApiResponse;
 import com.opensprout.lessonai.model.lesson.LessonGenerateReqVO;
+import com.opensprout.lessonai.model.lesson.LessonFeedbackUpdateReqVO;
 import com.opensprout.lessonai.model.lesson.LessonRecordRespVO;
 import com.opensprout.lessonai.model.lesson.LessonRecordUpdateReqVO;
 import com.opensprout.lessonai.service.LessonRecordService;
@@ -38,6 +39,12 @@ public class LessonRecordController {
     public ApiResponse<LessonRecordRespVO> update(@PathVariable("id") Long id,
                                                   @Valid @RequestBody LessonRecordUpdateReqVO reqVO) {
         return ApiResponse.success(lessonRecordService.update(id, reqVO));
+    }
+
+    @PutMapping("/{id}/feedback")
+    public ApiResponse<LessonRecordRespVO> updateFeedback(@PathVariable("id") Long id,
+                                                          @Valid @RequestBody LessonFeedbackUpdateReqVO reqVO) {
+        return ApiResponse.success(lessonRecordService.updateFeedback(id, reqVO));
     }
 
 }

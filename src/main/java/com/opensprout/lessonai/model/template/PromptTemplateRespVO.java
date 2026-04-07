@@ -15,6 +15,10 @@ public class PromptTemplateRespVO {
 
     private String content;
 
+    private String category;
+
+    private String tags;
+
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;

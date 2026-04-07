@@ -15,6 +15,8 @@ public class LessonRecordRespVO {
 
     private Long templateId;
 
+    private String templateName;
+
     private Long llmConfigId;
 
     private String modelName;
@@ -28,6 +30,12 @@ public class LessonRecordRespVO {
     private String resultContent;
 
     private String editedContent;
+
+    private Integer feedbackRating;
+
+    private String feedbackLevel;
+
+    private String feedbackComment;
 
     private LocalDateTime createdAt;
 

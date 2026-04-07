@@ -32,4 +32,14 @@ public class UserDO extends BaseDO {
      */
     private String nickname;
 
+    /**
+     * 默认模板ID
+     */
+    private Long defaultTemplateId;
+
+    /**
+     * 默认教案风格偏好
+     */
+    private String defaultStyle;
+
 }

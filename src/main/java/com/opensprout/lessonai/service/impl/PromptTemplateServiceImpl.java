@@ -18,6 +18,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PromptTemplateServiceImpl implements PromptTemplateService {
 
+    private static final int MAX_TEMPLATE_NAME_LENGTH = 50;
+    private static final String DUPLICATE_NAME_SUFFIX = "（复用）";
+
     private final PromptTemplateMapper promptTemplateMapper;
 
     @Override
@@ -28,6 +31,8 @@ public class PromptTemplateServiceImpl implements PromptTemplateService {
         template.setUserId(userId);
         template.setName(reqVO.getName().trim());
         template.setContent(reqVO.getContent().trim());
+        template.setCategory(normalizeOptional(reqVO.getCategory()));
+        template.setTags(normalizeOptional(reqVO.getTags()));
         promptTemplateMapper.insert(template);
         return template.getId();
     }
@@ -38,6 +43,8 @@ public class PromptTemplateServiceImpl implements PromptTemplateService {
         PromptTemplateDO template = requireOwnedTemplate(id);
         template.setName(reqVO.getName().trim());
         template.setContent(reqVO.getContent().trim());
+        template.setCategory(normalizeOptional(reqVO.getCategory()));
+        template.setTags(normalizeOptional(reqVO.getTags()));
         promptTemplateMapper.updateById(template);
     }
 
@@ -64,6 +71,20 @@ public class PromptTemplateServiceImpl implements PromptTemplateService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Long createFromExisting(Long sourceId) {
+        PromptTemplateDO source = requireOwnedTemplate(sourceId);
+        PromptTemplateDO target = new PromptTemplateDO();
+        target.setUserId(SecurityUtils.getCurrentUserId());
+        target.setName(buildDuplicateName(source.getName()));
+        target.setContent(source.getContent());
+        target.setCategory(source.getCategory());
+        target.setTags(source.getTags());
+        promptTemplateMapper.insert(target);
+        return target.getId();
+    }
+
+    @Override
     public PromptTemplateDO getByIdAndUserId(Long id, Long userId) {
         return promptTemplateMapper.selectOne(new LambdaQueryWrapper<PromptTemplateDO>()
                 .eq(PromptTemplateDO::getId, id)
@@ -84,9 +105,27 @@ public class PromptTemplateServiceImpl implements PromptTemplateService {
                 .id(template.getId())
                 .name(template.getName())
                 .content(template.getContent())
+                .category(template.getCategory())
+                .tags(template.getTags())
                 .createdAt(template.getCreatedAt())
                 .updatedAt(template.getUpdatedAt())
                 .build();
+    }
+
+    private String normalizeOptional(String value) {
+        if (value == null) {
+            return "";
+        }
+        return value.trim();
+    }
+
+    private String buildDuplicateName(String sourceName) {
+        int maxPrefixLength = MAX_TEMPLATE_NAME_LENGTH - DUPLICATE_NAME_SUFFIX.length();
+        String normalizedName = sourceName == null ? "" : sourceName.trim();
+        if (normalizedName.length() <= maxPrefixLength) {
+            return normalizedName + DUPLICATE_NAME_SUFFIX;
+        }
+        return normalizedName.substring(0, maxPrefixLength) + DUPLICATE_NAME_SUFFIX;
     }
 
 }

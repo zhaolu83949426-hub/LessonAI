@@ -21,9 +21,13 @@
           <van-icon name="apps-o" size="24" />
           <span>模板</span>
         </div>
-        <div class="nav-item" @click="handleLogout">
+        <div
+          class="nav-item"
+          :class="{ active: route.path.startsWith('/profile') }"
+          @click="router.push('/profile')"
+        >
           <van-icon name="setting-o" size="24" />
-          <span>退出</span>
+          <span>我的</span>
         </div>
       </div>
     </div>
@@ -32,16 +36,9 @@
 
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
-import { useUserStore } from '@/stores/user'
 
 const route = useRoute()
 const router = useRouter()
-const userStore = useUserStore()
-
-const handleLogout = () => {
-  userStore.logout()
-  router.push('/login')
-}
 </script>
 
 <style scoped>

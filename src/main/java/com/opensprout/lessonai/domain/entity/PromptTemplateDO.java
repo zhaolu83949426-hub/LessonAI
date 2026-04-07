@@ -32,4 +32,14 @@ public class PromptTemplateDO extends BaseDO {
      */
     private String content;
 
+    /**
+     * 模板分类
+     */
+    private String category;
+
+    /**
+     * 模板标签，逗号分隔
+     */
+    private String tags;
+
 }
